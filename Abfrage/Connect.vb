@@ -29,10 +29,10 @@ Public Class Connect
             Console.WriteLine(ex.Message)
         End Try
 
-        Dim token As String = Twitch.Tokenabfrage.Tokenerstellen()
-        If token = Nothing Then
-            Console.WriteLine("Token Error")
-        End If
+        'Dim token As String = Twitch.Tokenabfrage.Tokenerstellen()
+        'If token = Nothing Then
+        '    Console.WriteLine("Token Error")
+        'End If
 
         ' oauth:yxu0rf9awuot19moi4g59cit99dvc4
 

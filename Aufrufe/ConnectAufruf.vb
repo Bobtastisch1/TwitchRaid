@@ -21,7 +21,7 @@ Public Class ConnectAufruf
                 'Console.WriteLine(s)  'read incoming messages
 
                 If (onetime < 1) Then
-
+                    Connect.Message("I am a BOT")
                     Connect.Message("/Raid ")
                 End If
                 onetime += 1
