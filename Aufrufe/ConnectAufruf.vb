@@ -1,7 +1,7 @@
 ﻿Imports System.Threading.Tasks
 
 Public Class ConnectAufruf
-    Private Shared RandomStreamerRaid As String
+
 
     Public Shared Async Sub Aufruf()
 
