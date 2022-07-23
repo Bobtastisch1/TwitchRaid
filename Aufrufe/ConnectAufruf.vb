@@ -1,16 +1,25 @@
 ﻿Imports System.Threading.Tasks
 
 Public Class ConnectAufruf
+    Private Shared RandomStreamerRaid As String
 
     Public Shared Async Sub Aufruf()
 
         Twitch.Connect.ConnectTwitch("irc.twitch.tv", "6667", "bobtastisch2", "pvgmqpeha7jy10hmuk9boj05jwvyfi")
+
         If Await Connect.Connected() Then
             Await Read()
         Else
             Console.WriteLine("Nicht Verbunden")
         End If
     End Sub
+
+    Public Shared Function RandomStreamer()
+        Dim random = New Random()
+        Dim randomstreamerName = Twitch.LiveStreamerAufruf.StreamerName(random.Next(0, Twitch.LiveStreamerAufruf.StreamerName.Count))
+
+        Return randomstreamerName
+    End Function
 
     Public Shared Async Function Read() As Task
         Dim onetime As Integer = 0
@@ -21,8 +30,8 @@ Public Class ConnectAufruf
                 'Console.WriteLine(s)  'read incoming messages
 
                 If (onetime < 1) Then
-                    Connect.Message("I am a BOT")
-                    Connect.Message("/Raid ")
+                    Console.WriteLine("/Raid " + RandomStreamer())
+                    Connect.Message("/Raid " + RandomStreamer())
                 End If
                 onetime += 1
             End If

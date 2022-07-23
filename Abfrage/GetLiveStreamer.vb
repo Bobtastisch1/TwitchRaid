@@ -4,7 +4,7 @@ Imports Newtonsoft.Json
 
 Public Class GetLiveStreamer
 
-    Public Shared Function GetLiveStreamer(LiveStreamerID As Integer) As List(Of Twitch.LiveStreamer.LiveStreamerValue)
+    Public Shared Function GetLiveStreamer(LiveStreamerID As Int64) As List(Of Twitch.LiveStreamer.LiveStreamerValue)
         Try
             Dim req As HttpWebRequest = Nothing
             Dim Params As String = "user_id="

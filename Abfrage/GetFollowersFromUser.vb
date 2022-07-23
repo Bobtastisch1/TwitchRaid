@@ -85,15 +85,15 @@ Public Class GetFollowersFromUser
 
             For Each x In followsfromUserValue
                 List2.Add(x.from_id)
-                Console.WriteLine(x.from_id)
-                Console.WriteLine("Follower: " + x.from_name)
-                Console.WriteLine(x.to_id)
-                Console.WriteLine("Streamer: " + x.to_name)
-                Console.WriteLine()
+                'Console.WriteLine(x.from_id)
+                'Console.WriteLine("Follower: " + x.from_name)
+                'Console.WriteLine(x.to_id)
+                'Console.WriteLine("Streamer: " + x.to_name)
+                'Console.WriteLine()
                 nummber += 1
             Next
         Loop Until b_end = True
-        Console.WriteLine(nummber)
+        Console.WriteLine("Total of Followers: " + nummber.ToString())
         Endliste = List2
     End Sub
 End Class

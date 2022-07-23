@@ -36,7 +36,7 @@ Public Class Connect
 
         ' oauth:yxu0rf9awuot19moi4g59cit99dvc4
 
-        'OutputSt.WriteLine("PASS oauth:" + token)
+        'OutputSt.WriteLine("PASS " + "oauth:" + token)
         OutputSt.WriteLine("PASS " + "oauth:yxu0rf9awuot19moi4g59cit99dvc4")
         OutputSt.WriteLine("NICK " + Username)
         OutputSt.WriteLine("JOIN " + Channel)

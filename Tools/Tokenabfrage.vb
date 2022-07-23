@@ -4,10 +4,12 @@
 Public Class Tokenabfrage
     Public Const ClientID As String = "4x0y96rzul3zcdv4fa8pc084ug2jct"
     Private Const ClientSecret As String = "pvgmqpeha7jy10hmuk9boj05jwvyfi"
-    Private Shared firsttime As Boolean = True
+    Private Shared expires As Integer = 0
+    Private Shared token As Token
 
     Public Shared Function Tokenerstellen()
-        If Not Expired() = Nothing AndAlso firsttime = True Then
+
+        If token Is Nothing Or expires < 5000 Then
             Try
                 Dim URL = "https://id.twitch.tv/oauth2/token"
                 Dim req As HttpWebRequest = WebRequest.CreateHttp(URL)
@@ -22,16 +24,14 @@ Public Class Tokenabfrage
                 End Using
                 Dim response As HttpWebResponse = req.GetResponse()
                 Dim result As String = New System.IO.StreamReader(response.GetResponseStream).ReadToEnd
-                Dim token As Token
                 token = Newtonsoft.Json.JsonConvert.DeserializeObject(Of Token)(result)
-                firsttime = False
+                expires = token.expires_in
                 Return token.access_token
             Catch ex As Exception
                 Console.WriteLine("Token abfrage Error:" + ex.Message)
             End Try
-            Return Nothing
         End If
-        Return Nothing
+        Return token.access_token
     End Function
 
     Public Shared Function GetBody()
@@ -41,12 +41,4 @@ Public Class Tokenabfrage
         Return params
     End Function
 
-    Public Shared Function Expired()
-        Dim datetime As DateTime = DateTime.UtcNow
-        Dim expiresAbsolute As DateTimeOffset = DateTimeOffset.UtcNow.AddSeconds(5000000)
-
-
-        firsttime = True
-        Return Nothing
-    End Function
 End Class
