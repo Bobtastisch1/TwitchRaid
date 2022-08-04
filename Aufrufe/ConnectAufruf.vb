@@ -1,11 +1,11 @@
 ﻿Imports System.Threading.Tasks
 
 Public Class ConnectAufruf
-
+    Public Shared BotName As String
 
     Public Shared Async Sub Aufruf()
 
-        Twitch.Connect.ConnectTwitch("irc.twitch.tv", "6667", "bobtastisch2", "pvgmqpeha7jy10hmuk9boj05jwvyfi")
+        Twitch.Connect.ConnectTwitch("irc.twitch.tv", "6667", BotName)
 
         If Await Connect.Connected() Then
             Await Read()
@@ -30,8 +30,8 @@ Public Class ConnectAufruf
                 'Console.WriteLine(s)  'read incoming messages
 
                 If (onetime < 1) Then
-                    Console.WriteLine("/Raid " + RandomStreamer())
                     Connect.Message("/Raid " + RandomStreamer())
+
                 End If
                 onetime += 1
             End If

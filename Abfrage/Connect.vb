@@ -8,17 +8,16 @@ Public Class Connect
     Private Shared Server As String = ""
     Private Shared Port As Integer = 0
     Private Shared Username As String = ""
-    Private Shared Passwort As String = ""
     Private Shared InputSt As StreamReader
-    Public Shared OutputSt As StreamWriter
     Private Shared TcpC As TcpClient
-    Private Shared Channel As String = "#bobtastisch2"
 
-    Public Shared Sub ConnectTwitch(_Server As String, _Port As Integer, _Username As String, _Passwort As String)
+    Public Shared Channel As String = ""
+    Public Shared OutputSt As StreamWriter
+    Public Shared oauth As String = ""
+    Public Shared Sub ConnectTwitch(_Server As String, _Port As Integer, _Username As String)
         Server = _Server
         Port = _Port
         Username = _Username
-        Passwort = _Passwort
 
         Try
             TcpC = New TcpClient(Server, Port)
@@ -37,7 +36,8 @@ Public Class Connect
         ' oauth:yxu0rf9awuot19moi4g59cit99dvc4
 
         'OutputSt.WriteLine("PASS " + "oauth:" + token)
-        OutputSt.WriteLine("PASS " + "oauth:yxu0rf9awuot19moi4g59cit99dvc4")
+        'OutputSt.WriteLine("PASS " + "oauth:yxu0rf9awuot19moi4g59cit99dvc4")
+        OutputSt.WriteLine("PASS " + oauth)
         OutputSt.WriteLine("NICK " + Username)
         OutputSt.WriteLine("JOIN " + Channel)
         OutputSt.Flush()
@@ -45,8 +45,8 @@ Public Class Connect
     End Sub
 
     Public Shared Sub Message(message As String)
-        Dim channel As String = "#bobtastisch2"
-        WriteText("PRIVMSG " + channel + " :" + message)
+        'Dim channel As String = "#bobtastisch2"
+        WriteText("PRIVMSG " + Channel + " :" + message)
 
     End Sub
 

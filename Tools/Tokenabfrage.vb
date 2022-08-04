@@ -2,8 +2,8 @@
 
 
 Public Class Tokenabfrage
-    Public Const ClientID As String = "4x0y96rzul3zcdv4fa8pc084ug2jct"
-    Private Const ClientSecret As String = "pvgmqpeha7jy10hmuk9boj05jwvyfi"
+    Public Shared ClientID As String = ""
+    Public Shared ClientSecret As String = ""
     Private Shared expires As Integer = 0
     Private Shared token As Token
 
@@ -37,7 +37,7 @@ Public Class Tokenabfrage
     Public Shared Function GetBody()
         Dim params As String
 
-        params = "client_id=4x0y96rzul3zcdv4fa8pc084ug2jct&client_secret=pvgmqpeha7jy10hmuk9boj05jwvyfi&grant_type=client_credentials"
+        params = "client_id=" + ClientID + "&client_secret=" + ClientSecret + "&grant_type=client_credentials"
         Return params
     End Function
 

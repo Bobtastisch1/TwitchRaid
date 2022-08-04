@@ -1,6 +1,7 @@
 ﻿Module Main
 
     Sub Main()
+        CreatePasswortFile.Textfile()
 
         'StreamAufruf.Aufruf("wubbl0rz")                    'get Livestreamer that is live and give back ID of Streamer
         FollowersFromUser.Aufruf(187244607)
