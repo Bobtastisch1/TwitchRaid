@@ -16,9 +16,12 @@ Public Class ConnectAufruf
 
     Public Shared Function RandomStreamer()
         Dim random = New Random()
-        Dim randomstreamerName = Twitch.LiveStreamerAufruf.StreamerName(random.Next(0, Twitch.LiveStreamerAufruf.StreamerName.Count))
-
-        Return randomstreamerName
+        If Not Twitch.LiveStreamerAufruf.StreamerName Is Nothing Then
+            Dim randomstreamerName = Twitch.LiveStreamerAufruf.StreamerName(random.Next(0, Twitch.LiveStreamerAufruf.StreamerName.Count))
+            Return randomstreamerName
+        End If
+        Console.WriteLine("Nobody to Raid")
+        Return Nothing
     End Function
 
     Public Shared Async Function Read() As Task

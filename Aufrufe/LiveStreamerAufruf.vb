@@ -6,7 +6,8 @@
 
         For Each LiveStreamer In LiveStreamerObjekt
             StreamerName.Add(LiveStreamer.user_login)
-
+            Console.WriteLine("Posible Streamer to Raid: ")
+            Console.WriteLine(LiveStreamer.user_login)
             'Console.WriteLine("ID: " & LiveStreamer.id)
             'Console.WriteLine("Streamer ID: " + LiveStreamer.user_id)
             'Console.WriteLine("Streamer Name: " + LiveStreamer.user_login)
