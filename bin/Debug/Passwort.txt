@@ -1,5 +1,0 @@
-﻿ClientID: 4x0y96rzul3zcdv4fa8pc084ug2jct
-ClientSecret: pvgmqpeha7jy10hmuk9boj05jwvyfi
-oauth: oauth:yxu0rf9awuot19moi4g59cit99dvc4
-Chatroom: #bobtastisch2
-BotName: bobtastisch2
