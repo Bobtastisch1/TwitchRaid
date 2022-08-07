@@ -30,5 +30,11 @@ Chatroom is the Twitch Chat you want to join should be yours or maybe you want t
 
 BotName is the Account that will send the Message I selected my Own Account for it. Your Twitchname
 
+The ID is the Bot/Streamer ID. I got it with Chatterino by clicking on my name. In the programm there is a funktion for getting a ID from a Streamer but
+It is out commented out for now
+
+![image](https://user-images.githubusercontent.com/57360895/183302030-0b19fa85-5f94-402f-a4a1-fe71cb9cb26b.png)
+
+
 
 If you did all that you can Happy raid people with just One Click :3
