@@ -1,10 +1,11 @@
 ﻿Module Main
+    Public ID As Integer
 
     Sub Main()
         CreatePasswortFile.Textfile()
 
         'StreamAufruf.Aufruf("bobtastisch2")                    'get Livestreamer that is live and give back ID of Streamer
-        FollowersFromUser.Aufruf(187244607)
+        FollowersFromUser.Aufruf(ID)
         'LiveStreamerAufruf.Aufruf(187244607)
         'FollowersFromUser.Aufruf(StreamAufruf.StreamIDgiveback)'get Your followers
         For Each ID In GetFollowersFromUser.Endliste

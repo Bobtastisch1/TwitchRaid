@@ -10,7 +10,9 @@ Public Class CreatePasswortFile
             file.WriteLine("oauth: ")
             file.WriteLine("Chatroom: ")
             file.WriteLine("BotName: ")
+            file.WriteLine("ID: ")
             file.Close()
+
         End If
         Readfile()
     End Sub
@@ -25,13 +27,20 @@ Public Class CreatePasswortFile
             stringReader = filereader.ReadLine()
             If Not stringReader = "" Then
                 value = stringReader.Substring(InStr(stringReader, " "))
-                If number = 0 Then Tokenabfrage.ClientID = value
-                If number = 1 Then Tokenabfrage.ClientSecret = value
-                If number = 2 Then Connect.oauth = value
-                If number = 3 Then Connect.Channel = value
-                If number = 4 Then ConnectAufruf.BotName = value
-                number += 1
+                If Not value = Nothing Then
+                    If number = 0 Then Tokenabfrage.ClientID = value
+                    If number = 1 Then Tokenabfrage.ClientSecret = value
+                    If number = 2 Then Connect.oauth = value
+                    If number = 3 Then Connect.Channel = value
+                    If number = 4 Then ConnectAufruf.BotName = value
+                    If number = 5 Then
+                        If Not value = "" Then
+                            ID = value
+                        End If
+                    End If
                 End If
+                number += 1
+            End If
         Loop
     End Sub
 End Class
