@@ -3,18 +3,21 @@
 Public Class CreatePasswortFile
     Public Shared file As System.IO.StreamWriter
     Public Shared Sub Textfile()
-        If My.Computer.FileSystem.FileExists("Passwort.txt") = False Then
+        If Not My.Computer.FileSystem.FileExists("Passwort.txt") Then
             file = My.Computer.FileSystem.OpenTextFileWriter("Passwort.txt", True)
             file.WriteLine("ClientID: ")
             file.WriteLine("ClientSecret: ")
             file.WriteLine("oauth: ")
             file.WriteLine("Chatroom: ")
             file.WriteLine("BotName: ")
-            file.WriteLine("ID: ")
             file.Close()
-
+            Console.WriteLine("Passwort.txt Created Please fill in the Data")
+            Console.WriteLine("And start again the Programm")
+            System.Threading.Thread.Sleep(10000)
+            Environment.Exit(0)
+        Else
+            Readfile()
         End If
-        Readfile()
     End Sub
 
     Public Shared Sub Readfile()
@@ -32,12 +35,14 @@ Public Class CreatePasswortFile
                     If number = 1 Then Tokenabfrage.ClientSecret = value
                     If number = 2 Then Connect.oauth = value
                     If number = 3 Then Connect.Channel = value
-                    If number = 4 Then ConnectAufruf.BotName = value
-                    If number = 5 Then
-                        If Not value = "" Then
-                            ID = value
-                        End If
+                    If number = 4 Then
+                        ConnectAufruf.BotName = value
+                        TwitchStreamerName = value
                     End If
+                Else
+                    Console.WriteLine("Put some Data in Passwort.txt :3")
+                    System.Threading.Thread.Sleep(10000)
+                    Environment.Exit(0)
                 End If
                 number += 1
             End If

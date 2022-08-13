@@ -139,14 +139,17 @@
     <Compile Include="Abfrage\GetFollowersFromUser.vb" />
     <Compile Include="Abfrage\GetLiveStreamer.vb" />
     <Compile Include="Abfrage\GetStreams.vb" />
+    <Compile Include="Abfrage\GetTwitchStreamer.vb" />
     <Compile Include="Aufrufe\ConnectAufruf.vb" />
     <Compile Include="Aufrufe\FollowersFromUser.vb" />
     <Compile Include="Aufrufe\LiveStreamerAufruf.vb" />
     <Compile Include="Aufrufe\StreamAufruf.vb" />
+    <Compile Include="Aufrufe\TwitchStreamAufruf.vb" />
     <Compile Include="Modelle\LiveStreamer.vb" />
     <Compile Include="Modelle\Stream.vb" />
     <Compile Include="Modelle\Token.vb" />
     <Compile Include="Main.vb" />
+    <Compile Include="Modelle\TwitchStreamer.vb" />
     <Compile Include="Modelle\UserFollows.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

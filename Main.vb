@@ -1,8 +1,10 @@
 ﻿Module Main
     Public ID As Integer
+    Public TwitchStreamerName As String
 
     Sub Main()
         CreatePasswortFile.Textfile()
+        TwitchStreamAufruf.Aufruf(TwitchStreamerName)
 
         'StreamAufruf.Aufruf("bobtastisch2")                    'get Livestreamer that is live and give back ID of Streamer
         FollowersFromUser.Aufruf(ID)
