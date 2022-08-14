@@ -16,7 +16,7 @@ Importened Stoff you need to set up:
         ClientID: xxx
         ClientSecret: xxx
         oauth: xxx
-        Chatroom: xxx
+        Chatroom: #xxx
         BotName: xxx
 
 ClientID and ClientSecret will you get when you make the Application for Twitch
