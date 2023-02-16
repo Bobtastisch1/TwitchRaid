@@ -151,6 +151,7 @@
     <Compile Include="Main.vb" />
     <Compile Include="Modelle\TwitchStreamer.vb" />
     <Compile Include="Modelle\UserFollows.vb" />
+    <Compile Include="MongoDB\Connection.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -202,6 +203,11 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MongoDB\Controller\" />
+    <Folder Include="MongoDB\Models\" />
+    <Folder Include="MongoDB\Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

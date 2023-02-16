@@ -16,10 +16,11 @@ Public Class ConnectAufruf
 
     Public Shared Function RandomStreamer()
         Dim random = New Random()
-        If Twitch.LiveStreamerAufruf.StreamerName IsNot Nothing Then
+        If Twitch.LiveStreamerAufruf.StreamerName.Count > 0 Then
             Dim randomstreamerName = Twitch.LiveStreamerAufruf.StreamerName(random.Next(0, Twitch.LiveStreamerAufruf.StreamerName.Count))
             Return randomstreamerName
         End If
+        Console.WriteLine("Not one Foller of yours is online")
         Console.WriteLine("Nobody to Raid")
         Return Nothing
     End Function

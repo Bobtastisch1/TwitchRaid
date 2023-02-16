@@ -16,6 +16,7 @@
             Next
             Twitch.ConnectAufruf.Aufruf()
         End If
+        Console.WriteLine("Hello")
     End Sub
 
 End Module
